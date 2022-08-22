@@ -10,7 +10,16 @@ const CampsitesList = () => {
             {
                 //campsite.name
                 //Put campsite.js array and invoke here
+                CAMPSITES.map((campsite) => {
+                    return (
+                        <Col className='m-4' md='5' key={campsite.id}>
+                            <CampsiteCard campsite={campsite}/>
+                        </Col>
+                    )
+                })
             }
         </Row>
     );
 }
+
+export default CampsitesList;

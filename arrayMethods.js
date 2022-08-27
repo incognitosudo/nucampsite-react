@@ -58,3 +58,4 @@ console.log(thingsWithOverFiftyPoints);
 console.log(selectedThing);
 console.log(feauturedThing);
 //or console.log(things.filter((thing) => thing.feautred[0]); but more code.
+

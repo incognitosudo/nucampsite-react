@@ -4,7 +4,7 @@ import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from "../campsitesSlice";
 
 
-const CampsitesList = () => {
+const CampsitesList = ({setCampsiteId}) => {
     const campsites = selectAllCampsites();
     return (
         //curly braces inside allows us to use JavaScript inside JSX
@@ -12,7 +12,11 @@ const CampsitesList = () => {
             {  //Put campsite.js array and invoke here
                 campsites.map((campsite) => {
                     return (
-                        <Col className='m-4' md='5' key={campsite.id}>
+                        <Col 
+                            className='m-4' 
+                            md='5' 
+                            key={campsite.id}
+                            onClick={() => setCampsiteId(campsite.id)}>
                             <CampsiteCard campsite={campsite}/>
                         </Col>
                     )

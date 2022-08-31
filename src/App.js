@@ -23,12 +23,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='contact' element={<ContactPage />} />
         <Route path='directory' element={<CampsitesDirectoryPage />} />
-        <Route 
-          path='directory/campsiteId'
-          element={<CampsitesDirectoryPage />}
-        />
-        
-        {/* This Route handles any request to a path that begin with 'direcotry/' followed by any string. */}
+
+        {/* This Route handles any request to a path that begin with 'direcotry/' followed by any string. The string after direcotry/ is campsiteId will be available  bc of useParams() */}
         <Route 
           path='directory/:campsiteId'
           element={<CampsiteDetailPage />}

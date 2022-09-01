@@ -1,5 +1,5 @@
 import { Container } from "reactstrap";
-import CampsitesList from '//features/campsites/CampsitesList';
+import CampsitesList from '../features/campsites/CampsitesList';
 
 const CampsitesDirectoryPage = () => {
     //const [ campsiteId, setCampsiteId ] = useState(0);

@@ -2,6 +2,7 @@ import { Container, Row } from "reactstrap";
 import { useParams } from "react-router-dom";
 import { selectCampsiteById } from "../features/campsitesSlice";
 import CampsiteDetail from "../features/campsites/CampsiteDetail";
+import CommentsList from "../features/comments/CommentsList"; //in order to get our comments to show up in CampsiteDetailPage.js
 
 
 //this is  a function component named CampsiteDetailPage with empty parameter list
@@ -13,8 +14,9 @@ const CampsiteDetailPage = () => {
         //has rendered container component
         <Container>
             <Row>
-                <CampsiteDetail campsite={campsite} />
-            </Row>
+                <CampsiteDetail campsite={campsite} /> {/*CampsiteList is rendered so in order to change page edit CampsiteDetail.j*/}
+                <CommentsList campsiteId={campsiteId} /> {/* empty array puts the other if statemnt that there are no comments for this campsite yet */}
+            </Row> 
         </Container>
     )
 }

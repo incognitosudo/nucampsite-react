@@ -12,6 +12,8 @@ const SubHeader = ({current, detail}) => {
                             Home
                         </Link>
                     </BreadcrumbItem>
+                    
+                    {/*This is a && expression short-circuilt evaluation. detail is truthy and right operand is renders a BreadcrumbItem component with Link component. If detail value is falsy then operator's right operand will not be evaluated*/}
                     { detail && (
                         <BreadcrumbItem>
                             <Link to='/directory'>
@@ -33,4 +35,5 @@ const SubHeader = ({current, detail}) => {
 
 };
 
+//Let us now update all the components in the (CampsiteDetailPage, CampsitesDirectoryPage, and HomePage) pages/ folder so that we can use the Subheader component
 export default SubHeader;

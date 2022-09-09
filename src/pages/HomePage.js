@@ -5,10 +5,8 @@ import SubHeader from '../components/SubHeader'; //render Subheader Component in
 const HomePage = () => {
     return (
         <Container>
-            <SubHeader current='Home'/>
-            <Row>
-                <DisplayList />
-            </Row>
+            <SubHeader current='Home'/>       
+            <DisplayList />
         </Container>
     );
 };

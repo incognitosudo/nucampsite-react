@@ -8,26 +8,17 @@ const SubHeader = ({current, detail}) => {
             <Col>
                 <Breadcrumb>
                     <BreadcrumbItem>
-                        <Link to='/'>
-                            Home
-                        </Link>
+                        <Link to='/'>Home</Link>
                     </BreadcrumbItem>
-                    
                     {/*This is a && expression short-circuilt evaluation. detail is truthy and right operand is renders a BreadcrumbItem component with Link component. If detail value is falsy then operator's right operand will not be evaluated*/}
-                    { detail && (
+                    {detail && (
                         <BreadcrumbItem>
-                            <Link to='/directory'>
-                                Directory
-                            </Link>
+                            <Link to='/directory'>Directory</Link>
                         </BreadcrumbItem>
                     )}
-                    <BreadcrumbItem active>
-                        {current}
-                    </BreadcrumbItem>
+                    <BreadcrumbItem active>{current}</BreadcrumbItem>
                 </Breadcrumb>
-                <h2>
-                    {current}
-                </h2>
+                <h2>{current}</h2>
                 <hr /> {/* this is a horizontal rule element which creates a thin horizontal line*/}
             </Col>
         </Row>

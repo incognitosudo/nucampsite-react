@@ -13,6 +13,7 @@ import { Route, Routes} from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import CampsiteDetailPage from './pages/CampsiteDetailPage';
+import AboutPage from './pages/AboutPage';
 
 //route path with prop of 'directory'
 function App() {
@@ -25,10 +26,8 @@ function App() {
         <Route path='directory' element={<CampsitesDirectoryPage />} />
 
         {/* This Route handles any request to a path that begin with 'direcotry/' followed by any string. The string after direcotry/ is campsiteId will be available  bc of useParams() */}
-        <Route
-            path='directory/:campsiteId'
-            element={<CampsiteDetailPage />}
-        />
+        <Route path='directory/:campsiteId'element={<CampsiteDetailPage />}/>
+        <Route path='about' element={<AboutPage /> } />
       </Routes>
       <Footer />
     </div>

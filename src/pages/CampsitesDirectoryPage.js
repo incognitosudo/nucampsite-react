@@ -14,7 +14,7 @@ const CampsitesDirectoryPage = () => {
         <Container>
             <SubHeader currrent='Directory'/>
             <CampsitesList />         
-        </Container>
+        </Container> 
     );
 };
 

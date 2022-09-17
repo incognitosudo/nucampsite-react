@@ -1,21 +1,27 @@
 import { Col, Row } from "reactstrap";
-import DisplayCard from "./DisplayCard";
+//import DisplayCard from "./DisplayCard";
 import { selectFeauturedCampsite } from "../campsitesSlice";
 import { selectFeaturedPromotion } from "../promotions/promotionSlice";
+import { selectFeaturedPartner } from "../partners/partnersSlice";
+import AnimatedDisplayCard from "./AnimatedDisplayCard";
+
+
 
 //funciton component called DisplayList
 const DisplayList = () => {
     //Declared const items variable equal to array contianing the return value of selectFeauturedCampsite() and selectFeaturedPromotion()
-    const items = [selectFeauturedCampsite(), selectFeaturedPromotion()];
+    const items = [selectFeauturedCampsite(), selectFeaturedPromotion(), selectFeaturedPartner()];
 
     return(
         <Row>
             {//map method takes callback funciton as its argument. Define this callback function in argument list as an arrow func with two params: item and idx
                 items.map((item, idx) => {
                     return (
-                        <Col md className='m-1' key={idx} >
-                            <DisplayCard item={item} />
-                        </Col>
+                        item && (//uses logical && to short-circuit rendering 'Col' component and its contents if value of 'item' is undefined (or falsy). Recall we used this operator in a similar way last week in SubHeader component.
+                            <Col md className='m-1' key={idx} >
+                                <AnimatedDisplayCard item={item} />
+                            </Col>
+                        )
                     );
                 })
             }

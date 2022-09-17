@@ -41,3 +41,6 @@ export const CAMPSITES = [
             "You'll never want to leave this hidden gem, deep within the lush Redux Woods."
     }
 ];
+
+
+//we will be adding coniditional rendering to handle case if any of selectors used in this file return undefined or that no featured campsite, partner or promotion is found. To test it out set the featured to false and nothing is rendered. 

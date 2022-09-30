@@ -33,3 +33,5 @@ export const validateContactForm = (values) => {
 
     return errors;
 };
+
+//need to import to ContactForm.js

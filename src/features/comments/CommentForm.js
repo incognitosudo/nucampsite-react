@@ -3,7 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 
 const CommentForm = ({campsiteId}) => {
 
-    const { modalOpen, setModalOpen } = useState(false);
+    const [ modalOpen, setModalOpen ] = useState(false);
 
     
     return (

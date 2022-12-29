@@ -1,12 +1,21 @@
 import { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label } from "reactstrap";
 import { Formik, Fiel, Form } from "formik";
 
 const CommentForm = ({campsiteId}) => {
 
     const [ modalOpen, setModalOpen ] = useState(false);
 
-    
+    const handleSubmit = (values) => {
+        const comment = {
+            campsiteId: parseInt(campsiteId),
+            rating: values.rating,
+            author: values.author,
+            text: values.commentText
+        };
+        console.log(comment);
+        setModalOpen(false)
+    }
     return (
         
             <>  
@@ -22,9 +31,27 @@ const CommentForm = ({campsiteId}) => {
                     }> 
                         Add Comment
                     </ModalHeader>
-                    <ModalBody>
+                    <Formik 
+                        initialValues = {{
+                        rating: undefined,
+                        author: '',
+                        commentText: ''
+                        }}
+                        onSubmit = {handleSubmit}
+                    >
                         campsite: {campsiteId}
-                    </ModalBody>
+                        <Form>
+                            <FormGroup>
+                                <Label></Label>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label></Label>
+                            </FormGroup>
+                            <FormGroup>
+                                <Label></Label>
+                            </FormGroup>
+                        </Form>
+                    </Formik>
                 </Modal>
             </>
     

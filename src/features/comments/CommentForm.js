@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import { Formik, Fiel, Form } from "formik";
 
 const CommentForm = ({campsiteId}) => {
 
@@ -8,7 +9,7 @@ const CommentForm = ({campsiteId}) => {
     
     return (
         
-            <>
+            <>  
                 <Button outline onClick = {() => {
                     setModalOpen(true)}
                     }

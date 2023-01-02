@@ -10,7 +10,8 @@ import { useSelector } from "react-redux";
 //this is  a function component named CampsiteDetailPage with empty parameter list
 const CampsiteDetailPage = () => {
     const {campsiteId} = useParams(); //--> variable campsiteId has been destructure from a call to the useParams() function
-    const campsite = selectCampsiteById(campsiteId);
+    const campsite = useSelector(selectCampsiteById(campsiteId));
+    console.log('campsite:', campsite);
 
     return ( //<-- return statement CampsiteDetailPage component
         //has rendered container component

@@ -2,11 +2,14 @@
 import { Col, Row } from "reactstrap";
 import CampsiteCard from "./CampsiteCard";
 import { selectAllCampsites } from "../campsitesSlice";
-
+import { useSelector } from "react-redux";
 
 
 const CampsitesList = () => {
-    const campsites = selectAllCampsites();
+    const campsites = useSelector(selectAllCampsites);
+    console.log('campsites:', campsites);
+
+
     return (
         //curly braces inside allows us to use JavaScript inside JSX
         <Row className='ms-auto'>

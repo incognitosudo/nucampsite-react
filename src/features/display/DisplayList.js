@@ -1,16 +1,19 @@
 import { Col, Row } from "reactstrap";
 //import DisplayCard from "./DisplayCard";
-import { selectFeauturedCampsite } from "../campsitesSlice";
+import { selectFeaturedCampsite } from "../campsitesSlice";
 import { selectFeaturedPromotion } from "../promotions/promotionSlice";
 import { selectFeaturedPartner } from "../partners/partnersSlice";
 import AnimatedDisplayCard from "./AnimatedDisplayCard";
+import { useSelector } from "react-redux";
 
 
-
-//funciton component called DisplayList
 const DisplayList = () => {
-    //Declared const items variable equal to array contianing the return value of selectFeauturedCampsite() and selectFeaturedPromotion()
-    const items = [selectFeauturedCampsite(), selectFeaturedPromotion(), selectFeaturedPartner()];
+    const items = useSelector((state) => [
+        selectFeaturedCampsite(state),
+        selectFeaturedPromotion(state),
+        selectFeaturedPartner(state)
+    ]);
+    console.log('display items:', items);
 
     return(
         <Row>

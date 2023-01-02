@@ -2,7 +2,7 @@ import { CAMPSITES } from "../app/shared/CAMPSITES";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    campsitresArray: CAMPSITES
+    campsitesArray: CAMPSITES
 };
 
 const campsitesSlice = createSlice({

@@ -4,6 +4,8 @@ import { selectCampsiteById } from "../features/campsitesSlice";
 import CampsiteDetail from "../features/campsites/CampsiteDetail";
 import CommentsList from "../features/comments/CommentsList"; //in order to get our comments to show up in CampsiteDetailPage.js
 import SubHeader from "../components/SubHeader"; //render Subheader Component in return statement
+import { useSelector } from "react-redux";
+
 
 //this is  a function component named CampsiteDetailPage with empty parameter list
 const CampsiteDetailPage = () => {
